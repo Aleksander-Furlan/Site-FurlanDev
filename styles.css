@@ -1,0 +1,697 @@
+/* GLOBAIS e RESET */
+:root {
+    --primary-color: #5d5dff;
+    --secondary-color: #8a2be2;
+    --dark-bg: #14142b;
+    --main-bg: #0f101a;
+    --card-bg: #1c1c38;
+    --text-light: #f0f0f5;
+    --font-family: 'Poppins', sans-serif;
+
+    /* URL DE FUNDO DO HERO */
+    --url-bg-polygonal: url('https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--main-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO (Header) --- */
+.header {
+    background-color: rgba(15, 16, 26, 0.98);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(93, 93, 255, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-right: 50px;
+}
+
+.logo-hex {
+    width: 35px;
+    height: 35px;
+    background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.logo-icon-inner {
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+}
+
+.nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    opacity: 0.8;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.cta-header {
+    background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 10px 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* --- SEÇÃO HERO --- */
+section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bg);
+    background-image:
+        linear-gradient(rgba(15, 16, 26, 0.95), rgba(15, 16, 26, 0.95)),
+        var(--url-bg-polygonal);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container do Hero: Conteúdo central (texto/botões) fica em z-index alto */
+.hero .container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.hero-subtitle {
+    font-size: 5.5rem;
+    font-weight: 700;
+    background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(93, 93, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+    padding: 0 50px;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    box-shadow: 0 4px 18px rgba(93, 93, 255, 0.6);
+    border: none;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.cta-group {
+    margin-bottom: 40px;
+}
+
+.cta-group a:first-child {
+    margin-right: 20px;
+}
+
+
+/* CARDS DE SERVIÇOS/SKILLS NO HERO */
+.hero-services {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    position: absolute;
+    bottom: -80px;
+    z-index: 50;
+}
+
+.service-card-hero {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(93, 93, 255, 0.3);
+    padding: 30px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-hero:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(93, 93, 255, 0.3);
+}
+
+.service-card-hero i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.service-card-hero h5 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.service-card-hero p {
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0;
+    opacity: 0.7;
+}
+
+
+/* ÍCONES FLUTUANTES - AGORA ESTÁTICOS E ATRÁS DO CONTEÚDO */
+.tech-icons-hero {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* Ícones ficam atrás do conteúdo (z-index: 10) */
+}
+
+.tech-icon {
+    position: absolute;
+    font-size: 80px;
+    opacity: 0.2;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+    /* REMOÇÃO DA ANIMAÇÃO 'float' */
+
+    /* Ponto de partida */
+    top: 50%;
+    left: 50%;
+    /* Centraliza o ícone (metade da largura/altura do próprio ícone) */
+    transform: translate(-50%, -50%);
+}
+
+/* POSICIONAMENTO INDIVIDUAL DOS 6 ÍCONES EM FORMA DE ANEL ESTÁTICO */
+/* Raio aumentado para 300px para mais espaço */
+/* ÍCONES FLUTUANTES - AGORA ESTÁTICOS E ATRÁS DO CONTEÚDO */
+.tech-icons-hero {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* Ícones ficam atrás do conteúdo (z-index: 10) */
+}
+
+.tech-icon {
+    position: absolute;
+    font-size: 80px;
+    opacity: 0.2;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+    /* Ponto de partida */
+    top: 50%;
+    left: 50%;
+    /* Centraliza o ícone (metade da largura/altura do próprio ícone) */
+    transform: translate(-50%, -50%);
+}
+
+/* POSICIONAMENTO INDIVIDUAL DOS 8 ÍCONES NA POSIÇÃO EXATA DOS CÍRCULOS (Raio em torno de 400px) */
+/* (Baseando-se em um plano cartesiano com o centro da tela como origem) */
+
+/* 1. TOPO ESQUERDA (Círculo 1) - React */
+.tech-icon.react {
+    color: #61DAFB;
+    transform: translate(-50%, -50%) translate(-230px, -395px);
+}
+
+/* 2. TOPO CENTRO-DIREITA (Círculo 2) - Node */
+.tech-icon.node {
+    color: #8CC84A;
+    transform: translate(-50%, -50%) translate(200px, -395px);
+}
+
+/* 3. TOPO DIREITA (Círculo 3) - Cloud (Novo) */
+.tech-icon.cloud {
+    color: #cccccc;
+    /* Cor genérica, ajuste se quiser */
+    transform: translate(-50%, -50%) translate(520px, -320px);
+}
+
+/* 4. MEIO ESQUERDA (Círculo 4) - JS */
+.tech-icon.js {
+    color: #F7DF1E;
+    transform: translate(-50%, -50%) translate(-520px, -320px);
+}
+
+/* 5. MEIO DIREITA (Círculo 5) - AWS */
+.tech-icon.aws {
+    color: #FF9900;
+    transform: translate(-50%, -50%) translate(560px, -20px);
+}
+
+/* 6. BAIXO ESQUERDA (Círculo 6) - DB */
+.tech-icon.db {
+    color: #336791;
+    transform: translate(-50%, -50%) translate(-560px, -20px);
+}
+
+/* 7. BAIXO CENTRO (Círculo 7) - AI */
+.tech-icon.ai {
+    color: var(--secondary-color);
+    transform: translate(-50%, -50%) translate(-525px, 300px);
+}
+
+/* 8. BAIXO DIREITA (Círculo 8) - Git (Novo) */
+.tech-icon.git {
+    color: #F1502F;
+    transform: translate(-50%, -50%) translate(520px, 300px);
+}
+
+
+/* REMOÇÃO DOS KEYFRAMES 'float' (não são mais necessários) */
+
+
+/* --- SEÇÕES DE CONTEÚDO (Projetos, Serviços, Sobre) --- */
+
+.projects {
+    background-color: var(--dark-bg);
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.section-title {
+    text-align: left;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.projects-services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: left;
+}
+
+.col-projects h4,
+.col-services-top h4 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.project-card-full {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-card-full i {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.project-card-full h5 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.project-card-full p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.project-card-full a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.service-grid-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.service-card-mini {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(93, 93, 255, 0.4);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.service-card-mini i {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+
+/* --- SEÇÃO SOBRE MIM --- */
+.about {
+    padding: 120px 0;
+    background-color: var(--main-bg);
+}
+
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.about-text h4 {
+    /* Título "Minha Trajetória" (Ajustado no passo anterior) */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.about-text p {
+    font-size: 16px;
+    /* Padrão do Hero: 1.15rem (Era 1.05rem) */
+    line-height: 1.8;
+    /* Padrão do Hero: 1.6 (Era 1.8) */
+    opacity: 0.9;
+    margin-bottom: 20px;
+    text-align: left;
+
+}
+
+.about-image {
+    flex-shrink: 0;
+    width: 280px;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 4px solid var(--card-bg);
+}
+
+
+
+
+/* --- SEÇÃO CONTATO --- */
+.contact {
+    padding-top: 50px;
+    padding-bottom: 120px;
+    background-color: var(--dark-bg);
+}
+
+.contact h4 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: left;
+}
+
+.contact-info {
+    position: relative;
+    z-index: 10;
+}
+
+.contact-dots {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.contact-dots span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    margin-right: 8px;
+    opacity: 0.8;
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 18px;
+    border: none;
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#contact-form button {
+    width: 100%;
+    background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 18px 0;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+
+/* --- RODAPÉ (Footer) --- */
+.footer {
+    background-color: #0d0d1a;
+    padding: 40px 0;
+    border-top: 3px solid var(--primary-color);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    padding: 0 40px;
+}
+
+.footer-logo-link {
+    margin-right: 0;
+    opacity: 0.9;
+}
+
+.footer-text {
+    font-size: 1.3rem;
+}
+
+.footer p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+
+/* ########################################################### */
+/* ### RESPONSIVIDADE (MEDIA QUERIES) ### */
+/* ########################################################### */
+
+/* Telas Médias (Tablet - abaixo de 1000px) */
+@media (max-width: 1000px) {
+
+    .nav,
+    .cta-header {
+        display: none;
+    }
+
+    .hero-subtitle {
+        font-size: 4rem;
+    }
+
+    .hero .container {
+        padding-bottom: 120px;
+    }
+
+    .hero-services {
+        flex-direction: column;
+        position: static;
+        margin-top: 40px;
+        bottom: auto;
+        max-width: 400px;
+        gap: 15px;
+    }
+
+    .service-card-hero {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .projects {
+        padding-top: 100px;
+    }
+
+    .projects-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid-mini {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .about-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Telas Pequenas (Celular - abaixo de 700px) */
+@media (max-width: 700px) {
+    .hero-subtitle {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .cta-group .btn {
+        /* Ajuste para a classe correta dos botões */
+        width: 100%;
+        /* Faz os botões ocuparem 100% do espaço disponível */
+        max-width: 300px;
+        /* Define um tamanho máximo para os botões, ajuste conforme necessário */
+        margin: 10px 20px;
+        /* Centraliza os botões */
+    }
+
+    .project-card-full {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .service-grid-mini {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .footer p {
+        text-align: center;
+    }
+}
