@@ -282,72 +282,75 @@ section {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1; /* Ícones ficam atrás do conteúdo (z-index: 10) */
+    z-index: 1;
+    /* Ícones ficam atrás do conteúdo (z-index: 10) */
 }
+
 .tech-icon {
-    position: absolute; 
-    font-size: 80px; 
-    opacity: 0.2; 
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8)); 
+    position: absolute;
+    font-size: 80px;
+    opacity: 0.2;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
     /* Ponto de partida */
     top: 50%;
     left: 50%;
     /* Centraliza o ícone (metade da largura/altura do próprio ícone) */
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
 }
 
 /* POSICIONAMENTO INDIVIDUAL DOS 8 ÍCONES NA POSIÇÃO EXATA DOS CÍRCULOS (Raio em torno de 400px) */
 /* (Baseando-se em um plano cartesiano com o centro da tela como origem) */
 
 /* 1. TOPO ESQUERDA (Círculo 1) - React */
-.tech-icon.react { 
-    color: #61DAFB; 
+.tech-icon.react {
+    color: #61DAFB;
     transform: translate(-50%, -50%) translate(-230px, -395px);
 }
 
 /* 2. TOPO CENTRO-DIREITA (Círculo 2) - Node */
-.tech-icon.node { 
-    color: #8CC84A; 
-    transform: translate(-50%, -50%) translate(200px, -395px); 
+.tech-icon.node {
+    color: #8CC84A;
+    transform: translate(-50%, -50%) translate(200px, -395px);
 }
 
 /* 3. TOPO DIREITA (Círculo 3) - Cloud (Novo) */
-.tech-icon.cloud { 
-    color: #cccccc; /* Cor genérica, ajuste se quiser */
-    transform: translate(-50%, -50%) translate(520px, -320px); 
+.tech-icon.cloud {
+    color: #cccccc;
+    /* Cor genérica, ajuste se quiser */
+    transform: translate(-50%, -50%) translate(520px, -320px);
 }
 
 /* 4. MEIO ESQUERDA (Círculo 4) - JS */
-.tech-icon.js { 
-    color: #F7DF1E; 
-    transform: translate(-50%, -50%) translate(-520px, -320px); 
+.tech-icon.js {
+    color: #F7DF1E;
+    transform: translate(-50%, -50%) translate(-520px, -320px);
 }
 
 /* 5. MEIO DIREITA (Círculo 5) - AWS */
-.tech-icon.aws { 
-    color: #FF9900; 
-    transform: translate(-50%, -50%) translate(560px, -20px); 
+.tech-icon.aws {
+    color: #FF9900;
+    transform: translate(-50%, -50%) translate(560px, -20px);
 }
 
 /* 6. BAIXO ESQUERDA (Círculo 6) - DB */
-.tech-icon.db { 
-    color: #336791; 
-    transform: translate(-50%, -50%) translate(-560px, -20px); 
+.tech-icon.db {
+    color: #336791;
+    transform: translate(-50%, -50%) translate(-560px, -20px);
 }
 
 /* 7. BAIXO CENTRO (Círculo 7) - AI */
-.tech-icon.ai { 
-    color: var(--secondary-color); 
-    transform: translate(-50%, -50%) translate(-525px, 300px); 
+.tech-icon.ai {
+    color: var(--secondary-color);
+    transform: translate(-50%, -50%) translate(-525px, 300px);
 }
 
 /* 8. BAIXO DIREITA (Círculo 8) - Git (Novo) */
-.tech-icon.git { 
-    color: #F1502F; 
-    transform: translate(-50%, -50%) translate(520px, 300px); 
+.tech-icon.git {
+    color: #F1502F;
+    transform: translate(-50%, -50%) translate(520px, 300px);
 }
 
 
@@ -463,7 +466,7 @@ section {
 
 .about-text h4 {
     /* Título "Minha Trajetória" (Ajustado no passo anterior) */
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
     margin-bottom: 20px;
     color: var(--text-light);
 }
@@ -589,9 +592,9 @@ section {
 .footer p {
     opacity: 0.7;
     font-size: 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 15px;
-    border-radius: 5px;
+    border: none;
+    padding: 0;
+    border-radius: 0;
 }
 
 
@@ -607,6 +610,7 @@ section {
         display: none;
     }
 
+
     .hero-subtitle {
         font-size: 4rem;
     }
@@ -614,6 +618,8 @@ section {
     .hero .container {
         padding-bottom: 120px;
     }
+
+
 
     .hero-services {
         flex-direction: column;
@@ -665,7 +671,19 @@ section {
 
     .cta-group {
         flex-direction: column;
+        /* Mantenha a direção em coluna */
         gap: 15px;
+        /* Espaçamento entre os botões */
+    }
+
+    .cta-group .btn {
+        /* Ajuste para a classe correta dos botões */
+        width: 100%;
+        /* Faz os botões ocuparem 100% do espaço disponível */
+        max-width: 300px;
+        /* Define um tamanho máximo para os botões, ajuste conforme necessário */
+        margin: 10px 20px;
+        /* Centraliza os botões */
     }
 
     .project-card-full {
